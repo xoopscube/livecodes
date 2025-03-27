@@ -1,19 +1,4 @@
 <{* Use standard XOOPSCube Legacy template structure *}>
-<div class="livecodes-wrapper">
-    <div id="livecodes"></div>
-    <div id="loading">
-        <img src="<{$xoops_url}>/modules/livecodes/livecodes/assets/images/livecodes-logo.svg" alt="LiveCodes logo" />
-        <div id="loading-text" hidden>
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2,12A11.2,11.2,0,0,1,13,1.05C12.67,1,12.34,1,12,1a11,11,0,0,0,0,22c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z">
-                    <animateTransform attributeName="transform" type="rotate" dur="0.6s" values="0 12 12;360 12 12" repeatCount="indefinite"/>
-                </path>
-            </svg>
-            Loading LiveCodes…
-        </div>
-    </div>
-</div>
-
 <style>
     html,body,#livecodes{margin:0;padding:0}
     .livecodes-wrapper {height: calc(100vh - 60px); position: relative;}
@@ -24,17 +9,43 @@
     @keyframes pulsate{0%{opacity:.2}50%{opacity:1}100%{opacity:.2}}
 </style>
 
-<script src="<{$xoops_url}>/modules/livecodes/livecodes/index.8da4c2c15c39e561644ee927d735e32a.js"></script>
-<script>
+<div class="livecodes-wrapper">
+<div id="livecodes"></div>
+<div id="loading">
+  <img src="<{$xoops_url}>/modules/livecodes/livecodes/assets/images/livecodes-logo.svg" alt="LiveCodes logo" />
+  <div id="loading-text" hidden>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2,12A11.2,11.2,0,0,1,13,1.05C12.67,1,12.34,1,12,1a11,11,0,0,0,0,22c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z"
+      >
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          dur="0.6s"
+          values="0 12 12;360 12 12"
+          repeatCount="indefinite"
+        />
+      </path>
+    </svg>
+    Loading LiveCodes…
+  </div>
+ </div>
+
+  <noscript><div class="noscript">Please enable JavaScript to use LiveCodes</div></noscript>
+  <script>
     document.querySelector('#loading-text').hidden = false;
 
 const config = {
-    baseUrl: '<{$xoops_url}>/modules/livecodes/',
+    baseUrl: '<{$xoops_url}>/modules/livecodes/',  // Remove /livecodes from the end
+    appUrl: '<{$xoops_url}>/modules/livecodes/app.html',  // Move app.html to module root
     docsUrl: '<{$xoops_url}>/modules/livecodes/docs/',
+    sdk: {
+        baseUrl: '<{$xoops_url}>/modules/livecodes/livecodes/'  // Add SDK baseUrl for assets
+    },
     auth: {
         enabled: true,
         required: true,
-        userInfo: <{$auth_data|@json_encode nofilter}>,  // Added @ and nofilter
+        userInfo: <{$auth_data|@json_encode nofilter}>,
         loginUrl: '<{$xoops_url}>/user.php',
         logoutUrl: '<{$xoops_url}>/user.php?op=logout'
     },
@@ -44,6 +55,6 @@ const config = {
         theme: 'dark'
     }
 };
-
-createLiveCodes('#livecodes', config);
 </script>
+</div>
+<script src="<{$xoops_url}>/modules/livecodes/livecodes/index.8da4c2c15c39e561644ee927d735e32a.js"></script>

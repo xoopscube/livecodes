@@ -16,7 +16,7 @@
             border: 1px solid #001b25;
             border-radius: 8px;
         }
-    `,document.head.appendChild(M);let $=async()=>{let v=await u.checkCDNs(T,r.get("appCDN")),W=HTMLScriptElement.supports?HTMLScriptElement.supports("importmap"):!1,l=document.createElement("iframe");l.name="app",l.style.display="none";let F=O?"?disableAI":"";l.src="./app.html"+F;let A=!1;if(l.onload=()=>{if(A)return;let t=I.replace(/{{baseUrl}}/g,i).replace(/{{script}}/g,f).replace(/{{appCDN}}/g,v).replace(/{{esModuleShimsUrl}}/g,u.getUrl(T,v)).replace(/{{codemirrorModule}}/g,W?"":`
+    `,document.head.appendChild(M);let $=async()=>{let v=await u.checkCDNs(T,r.get("appCDN")),W=HTMLScriptElement.supports?HTMLScriptElement.supports("importmap"):!1,l=document.createElement("iframe");l.name="app",l.style.display="none";let F=O?"?disableAI":"";l.src=i+"app.html"+F;let A=!1;if(l.onload=()=>{if(A)return;let t=I.replace(/{{baseUrl}}/g,i).replace(/{{script}}/g,f).replace(/{{appCDN}}/g,v).replace(/{{esModuleShimsUrl}}/g,u.getUrl(T,v)).replace(/{{codemirrorModule}}/g,W?"":`
     <script type="module">
       import * as mod from '${i}codemirror.2efd4735cf8a3779176807a9c3d434d4.js';
       window['${i}codemirror.2efd4735cf8a3779176807a9c3d434d4.js'] = mod;
