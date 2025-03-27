@@ -1,0 +1,152 @@
+<div data-layout="row sm-column">
+    <div data-self="size-xxsmall">
+        <nav id="help-menu">
+            <ul data-layout="rows">
+                <li><a href ="#help-overview" class="button">Overview</a>
+                <li><a href="#help-features" class="button">Features</a>
+                <li><a href="#help-embed" class="button">Embed</a>
+                <li><a href="#help-license" class="button">License</a>
+                <li><a href="#help-development" class="button">Development</a>
+            </ul>
+        </nav>
+    </div>
+
+<article id="help-module">
+
+    <section id="help-overview">
+
+    <h3>Overview</h3>
+    <p>Code Playground That Just Works!</p>
+ 
+		<p>Supports 90+ languages/frameworks. TypeScript Support, npm Modules, Console, Compiled code viewer, Tests, Starter Templates, Save, Import, Export, Share, Deploy, Assets, Snippets, Backup/Restore, Sync, Broadcast and a lot more features. Features are downloaded only when used.</p>
+		<h4>Embedded Playgrounds</h4>
+		<p>LiveCodes can be embedded in your web pages. Code can be easily prefilled. This is particularly useful for educational websites and for library documentations. It is secure and highly configurable. Intellisense is available even for custom libraries!</p>
+
+    </section>
+
+
+    <section id="help-features">
+
+		<h3>Feature-Rich</h3>
+
+        <ul>
+			<li>No servers to configure (or pay for!)
+			<li>No databases to maintain (or pay for!)
+			<li>No installs
+			<li>No configuration files
+			<li>No build steps
+			<li>No subscription fees (free and open-source)
+			<li>No account required *
+			<li>No limits for usage (unlimited private projects)
+			<li>90+ languages/frameworks/processors
+			<li>Large set of features and integrations
+			<li>Import code from a wide variety of sources
+			<li>Use modules from npm, deno.land/x, jsr, GitHub, and others
+			<li>Easily embed it in your web pages
+			<li>It runs in the browser (client-side)
+        </ul>
+		
+		<h4>Powerful Editor</h4>
+		<p>The code editor offers auto-complete, intellisense, code format, multi-cursor editing, Emmet support, Vim and Emacs modes, editor themes, customizable editor settings and more. The powerful Monaco editor (that powers VS Code) is used on desktop, and a touch-friendly editor is used on mobile.</p>
+
+		<h4>AI Code Assistant</h4>
+		<p>Leverage the power of AI to help you write/learn code, using the free Copilot alternative. It understands the context of your code and comments to generate suggestions. It has a wide range of language support, and it works everywhere (in the standalone app, embedded playgrounds and self-hosted apps).</p>
+
+        <h4>Integrations</h4>	
+		<p>Rich set of integrations. Import code from GitHub files/repos/gists, Gitlab files/repos/snippets, JsBin or web pages. Export to GitHub gists, CodePen or JsFiddle. Deploy to GitHub Pages. Sync to GitHub Repo.</p>
+
+    </section>
+
+
+    <section id="help-embed">
+
+        <h3>Embedded Playground</h3>
+		<p>The embedding web page can communicate with the playground using a powerful SDK (e.g. edit/format code, watch for code changes, get the compiled code or result page HTML, run tests, change layout, ...etc)</p>
+        <h6>Example</h6>
+        <p>The example bellow embeds a code playground in a web page.<br>
+		Add this code to your page:</p>
+<pre><code class="lang-js">
+	&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+	&lt;script type=&quot;module&quot;&gt;
+	import { createPlayground } from 'https://cdn.jsdelivr.net/npm/livecodes@0.9.0';
+	
+	createPlayground('#container', {
+	  params: {
+		markdown: '# Hello LiveCodes!',
+		css: 'h1 {color: dodgerblue;}',
+		js: 'console.log(&quot;Hello, from JS!&quot;);',
+		console: 'open',
+	  },
+	});
+	&lt;/script&gt;
+</code></pre>
+
+        <div class="confirm"><strong>Note !</strong> Remember to update your new template set.<br>
+			You can embed a Livecodes Playground within a custom template<br>
+            It won't interfere with the web site functionality or theme.<br>
+			Livecodes only downloads the selected programming language.
+        </div>
+
+        <h4 class="help-rel"><i class="i-help"></i> Related content</h4>
+        <ul>
+            <li><a href="<{$help}>=altsys#help-template-module">Components Custom Templates ⭢</a>
+            <li><a href="<{$help}>=legacyRender">Render Template Management ⭢</a></li>
+        </ul>
+
+    </section>
+
+
+    <section id="help-license">
+
+        <h3>License</h3>
+
+        <p>LiveCodes is made possible by open source projects, web services and contributors.<br>
+              LiveCodes is licensed under MIT License</p>
+
+    </section>
+
+
+    <section id="help-development">
+        <h3>Development</h3>
+
+        <table class="outer">
+            <tbody>
+            <tr>
+                <td>Bundle Package</td>
+                <td> XCL 2.5.0</td>
+            </tr>
+            <tr>
+                <td>Module name</td>
+                <td>Livecodes</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Module</td>
+            </tr>
+            <tr>
+                <td>Level</td>
+                <td>Recommended</td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>XCL module by Nuno Luciano aka gigamaster, 2024</td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td>Livecodes © Hatem Hosny</td>
+            </tr>
+            <tr>
+                <td>Copyright </td>
+                <td>Copyright (c) 2021-PRESENT Hatem Hosny, Authors</td>
+            </tr>
+            <tr>
+                <td>Repository URL</td>
+                <td><a href="https://github.com/xoopscube/livecodes" target="_blank">https://github.com/xoopscube/livecodes ⭧</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</article>
+</div>

@@ -1,0 +1,49 @@
+<{* Use standard XOOPSCube Legacy template structure *}>
+<div class="livecodes-wrapper">
+    <div id="livecodes"></div>
+    <div id="loading">
+        <img src="<{$xoops_url}>/modules/livecodes/livecodes/assets/images/livecodes-logo.svg" alt="LiveCodes logo" />
+        <div id="loading-text" hidden>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2,12A11.2,11.2,0,0,1,13,1.05C12.67,1,12.34,1,12,1a11,11,0,0,0,0,22c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z">
+                    <animateTransform attributeName="transform" type="rotate" dur="0.6s" values="0 12 12;360 12 12" repeatCount="indefinite"/>
+                </path>
+            </svg>
+            Loading LiveCodes…
+        </div>
+    </div>
+</div>
+
+<style>
+    html,body,#livecodes{margin:0;padding:0}
+    .livecodes-wrapper {height: calc(100vh - 60px); position: relative;}
+    #livecodes{background-color:#fff;color:#111;height:100%;overflow:hidden;opacity:0;transition:opacity .4s ease-in-out}
+    #loading{align-items:center;display:flex;flex-direction:column;height:100%;justify-content:center;opacity:1;overflow:hidden;position:absolute;top:0;transition:opacity .4s ease-in-out;width:100%}
+    #loading img{height:100px}
+    #loading-text{animation:pulsate 3s infinite;font-family:monospace;font-size:1.3em;margin:15px auto;position:relative;text-align:center}
+    @keyframes pulsate{0%{opacity:.2}50%{opacity:1}100%{opacity:.2}}
+</style>
+
+<script src="<{$xoops_url}>/modules/livecodes/livecodes/index.8da4c2c15c39e561644ee927d735e32a.js"></script>
+<script>
+    document.querySelector('#loading-text').hidden = false;
+
+const config = {
+    baseUrl: '<{$xoops_url}>/modules/livecodes/',
+    docsUrl: '<{$xoops_url}>/modules/livecodes/docs/',
+    auth: {
+        enabled: true,
+        required: true,
+        userInfo: <{$auth_data|@json_encode nofilter}>,  // Added @ and nofilter
+        loginUrl: '<{$xoops_url}>/user.php',
+        logoutUrl: '<{$xoops_url}>/user.php?op=logout'
+    },
+    params: {
+        autoupdate: true,
+        mode: 'full',
+        theme: 'dark'
+    }
+};
+
+createLiveCodes('#livecodes', config);
+</script>
